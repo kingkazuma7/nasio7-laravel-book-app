@@ -12,4 +12,10 @@ class Category extends Model
     
     // タイトル列の登録を許可する（ホワイトリスト）
     protected $fillable = ['title'];
+    
+    // 1対多
+    public function books(): HasMany
+    {
+        return $this->hasMany(Book::class);
+    }
 }

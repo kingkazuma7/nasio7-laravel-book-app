@@ -18,6 +18,7 @@ class Author extends Model
     
     public function books(): BelongsToMany
     {
+        // 著者一人に、複数の書籍が紐づくことを定義
         return $this->belongsToMany(Book::class)->withTimestamps();
     }
 }
