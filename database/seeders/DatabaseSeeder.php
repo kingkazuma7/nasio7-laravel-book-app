@@ -18,5 +18,17 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        
+        // CategoriesTableSeederファイルをシーティングの対象にする
+        // $this->call(CategoriesTableSeeder::class);
+        
+        // AuthorsTableSeederファイルをシーティングの対象にする
+        // $this->call(AuthorsTableSeeder::class);
+        
+        $this->call([
+            AuthorsTableSeeder::class,
+            BooksTableSeeder::class, 
+            AuthorBookTableSeeder::class,
+        ]);
     }
 }
