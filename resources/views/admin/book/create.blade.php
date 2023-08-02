@@ -8,13 +8,9 @@
     <main>
         <h1>書籍登録</h1>
         @if ($errors->any())
-            <div style="color:red">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+            <x-alert class="danger">
+                <x-error-messages :$errors />
+            </x-alert>
         @endif
         <form action="{{ route('book.store') }}" method="POST">
             @csrf
