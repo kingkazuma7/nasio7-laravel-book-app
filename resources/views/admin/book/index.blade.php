@@ -20,7 +20,7 @@
                 <th>価格</th>
             </tr>
             @foreach ($books as $book)
-                <tr>
+                <tr @if ($loop->even) style="background-color:#E0E0E0" @endif></tr>
                     <td>{{ $book->category->title }}</td>
                     <td>{{ $book->title }}</td>
                     <td>{{ $book->price }}</td>
