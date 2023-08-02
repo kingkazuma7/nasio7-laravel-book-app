@@ -13,7 +13,8 @@
             </div>
         @endif
         <a href="{{ route('book.create') }}">追加</a>
-        <table border="1">
+        <x-book-table :$books />
+        {{-- <table border="1">
             <tr>
                 <th>カテゴリ</th>
                 <th>書籍名</th>
@@ -26,7 +27,7 @@
                     <td>{{ $book->price }}</td>
                 </tr>
             @endforeach
-        </table>
+        </table> --}}
     </main>
 </body>
 </html>
