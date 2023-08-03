@@ -34,11 +34,12 @@ class BookController extends Controller
             ->header('Content-Encoding', 'UTF-8');
     }
     
-    public function show(string $id): Book
+    public function show(Book $book): View
     {
         // 書籍を一件取得
-        $book = Book::findOrfail($id);
-        return $book;
+        // $book = Book::findOrfail($id);
+        
+        return view('admin/book/show', compact('book'));
     }
     
     public function create(): View
