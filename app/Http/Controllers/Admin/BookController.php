@@ -115,4 +115,21 @@ class BookController extends Controller
         return redirect(route('book.index'))
                 ->with('message', $book->title . 'を変更しました。');
     }
+    
+    public function destory(Book $book): RedirectResponse
+    {
+        // 2023_07_29_011152_create_author_book_table.phpでcascadeOnDelete追加
+        //  → bookid削除で著者書籍レコードも削除される
+        // DB::transaction(function () use($book) {
+        //     // 削除
+        //     $book->authors()->detach();
+        //     $book->delete();
+        // });
+        
+        // 削除
+        $book->delete();
+        
+        return redirect(route('book.index'))
+                ->with('message', $book->title . 'を削除しました。');
+    }
 }
