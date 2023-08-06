@@ -5,10 +5,10 @@
   <h1>書籍登録</h1>
   @if ($errors->any())
       <x-alert class="danger">
-          <x-error-messages :$errors />
+				<x-error-messages :$errors />
       </x-alert>
   @endif
-  <form action="" method="POST">
+  <form action="{{ route('book.update', $book) }}" method="POST">
       @csrf
       @method('PUT')
       <x-book-form :$categories :$authors :$book :$authorIds />
